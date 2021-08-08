@@ -1,3 +1,32 @@
 p{
    color: #00FF00; 
+   display: inline;
+}
+
+h4{
+   display: inline;
+}
+
+.textCenter{
+   text-align: center;
+}
+
+#p2{
+   color:blue;
+}
+
+.aRight{
+   text-align: right;
+}
+
+.inline{
+   display:inline;
+}
+
+body{
+   background-color:#666666;
+}
+
+.redText{
+   color:red;
 }
