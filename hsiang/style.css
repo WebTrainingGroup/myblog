@@ -1,0 +1,19 @@
+body{
+    background-color:rgb(251, 255, 202);
+     }
+
+.aRight{
+        text-align: right;
+     }
+.class1{
+    display:inline;
+    clolr:#000
+
+}
+.class2{
+    display:inline;
+    color:blueviolet
+}
+.textcenter{
+    text-align: center 
+}
