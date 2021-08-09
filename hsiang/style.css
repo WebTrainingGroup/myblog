@@ -8,14 +8,16 @@ body{
 .textcenter{
     text-align: center;
 }
+.inline{
+    display:inline;
+ }
 .class1{
     display:inline;
-    color#000
-
+    color:rgb(3, 41, 2)k
 }
 .class2{
     display:inline;
-    color:rgb(42, 112, 80)
+    color:rgb(37, 146, 97)
 }
 .class3{
     text-align: center;
