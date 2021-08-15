@@ -1,0 +1,26 @@
+.logo{
+    border: 1px solid;
+    width: 30%;
+    height: 100px;
+    float: left;
+}
+.nav{
+
+    width: 65%;
+    height: 100px;
+    border: 1px solid;
+    float: left;
+}
+
+.se{
+    border: 1px solid; 
+    clear:left;
+}
+.box {
+    border: 1px solid;
+
+    float: left;
+    width: 200px;
+    height: 100px;
+    margin: 1em;
+  }
