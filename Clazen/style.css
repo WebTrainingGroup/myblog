@@ -1,19 +1,14 @@
 p {
-
     color: rgba(206, 206, 206, 0.685);
 }
 
 .TitleArea {
-
-    /* background-image: url(pexels-photo-3274903-cut.jpg) ; */
-    /* background-repeat: no-repeat ;
-    background-position: center; */
     background: url(pexels-photo-3274903-cut.jpg) no-repeat center ;
     height: 500px;
 }
 
 body {background-color: #0b0b13f8}
-/* #161525f8 */
+
 .TitleText {
     text-align: center;
     color:white ;
@@ -21,11 +16,13 @@ body {background-color: #0b0b13f8}
     position: relative;
     top: 45%;
 }
+
 .menu {
     word-spacing: 40px;
     color: rgba(206, 206, 206, 0.685);
     display:inline;
 }
+
 .menu:hover {
     color:blueviolet
 }
@@ -35,7 +32,5 @@ body {background-color: #0b0b13f8}
     display: inline;
 }
 
-.center {
-    text-align: center;
-}
+.center {    text-align: center;  }
 
