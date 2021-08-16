@@ -1,6 +1,6 @@
 
 body{
-    background: color rgb(255, 255, 255);;
+    /* background: color rgb(255, 255, 255); */
     margin: 25px 50px 25px 50px;
      }
 
@@ -11,33 +11,49 @@ body{
     position: sticky;
     top: 20px; */
     }
-#header .bannerbg{
-  background-image:url("images/banner.jpg"); 
+/* #header .bannerbg{
+    background-image:url("images/banner.jpg"); 
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
   height: 200px;
 
-　}
+　} */
+
+.Blogtitle{
+    text-align: center;
+}
+
+#main{
+    margin: 0 0px;
+    padding: 0 0px;
+    background-color: rgb(221, 221, 221);
+}
+
+.post{
+    text-align: center;
+}
+
 
 .aRight{
     text-align: right;
      }
 
-.textcenter{
-    text-align: center;
-}
+
 .inline{
     display:inline;
- }
-.class1{
+    }
+.class1{ 
     display:inline;
-    color:rgb(3, 41, 2)k
+    color:rgb(21, 32, 21);
+    font-size: 3em;
 }
 .class2{
     display:inline;
-    color:rgb(37, 146, 97)
+    color:rgb(37, 146, 97);
+    font-size: 3em;
 }
+
 .class3{
     text-align: center;
     color:rgb(163, 161, 161)
