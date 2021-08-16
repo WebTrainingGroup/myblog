@@ -24,16 +24,34 @@ body{
     text-align: center;
 }
 
-#main{
-    margin: 0 0px;
-    padding: 0 0px;
-    background-color: rgb(221, 221, 221);
+#main {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(83, 38, 38);
 }
 
+.posts {
+    background-color: rgb(255, 255, 255);
+    float: left;
+    width: 60%;
+    /* margin: 10px 30px;
+    padding: 10px 20px; */
+  }
 .post{
     text-align: center;
-}
+    }
 
+.Lists {
+    background-color: rgb(255, 255, 255);
+    float: right;
+    width: 20%;
+    /* margin: 10px 30px;
+    padding: 10px 20px; */
+}
+.About{
+    text-align: center;
+    color:rgb(163, 161, 161) 
+}
 
 .aRight{
     text-align: right;
@@ -72,7 +90,14 @@ body{
     text-align: center;
     color:rgb(163, 161, 161)
 }
-.line1{
+
+.postTitle{
+    font-size: 2em;
+    text-align: center;
+    color:rgb(64, 78, 64);
+}
+
+/* .line1{
     border: 1px solid;
     color:black
-}
+} */
