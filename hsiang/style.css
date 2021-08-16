@@ -1,15 +1,24 @@
 
 body{
-    background-color:rgb(241, 241, 228);
+    background: color rgb(255, 255, 255);;
     margin: 25px 50px 25px 50px;
      }
 
 #header {
     padding: 0;
+    margin: 0;
      /* position: -webkit-sticky;
     position: sticky;
     top: 20px; */
     }
+#header .bannerbg{
+  background-image:url("images/banner.jpg"); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  height: 200px;
+
+　}
 
 .aRight{
     text-align: right;
