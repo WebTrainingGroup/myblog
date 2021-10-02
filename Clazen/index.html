@@ -33,7 +33,15 @@
 <div id="main">
 
 <!-- display: inline 和 float:left 的用法、時機 -->
-
+<form action="" onsubmit=addPost(event) id="postAdd">
+    <label for="title">artical title</label>
+    <input type="text" name="PostTitle" id="title">
+    <br>
+    <label for="content">artical content</label>
+    <textarea name="PostContent" id="content" cols="50" rows="10"></textarea>
+    <br>
+    <input type="submit" value="Add Post">
+</form>
 
 <div id="posts">
     <!-- <div class="post">
