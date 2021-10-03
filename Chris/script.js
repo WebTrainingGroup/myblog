@@ -19,7 +19,7 @@ function displayPosts() {
   let postsDiv = document.getElementById("posts");
     postsDiv.innerHTML='';
 
-  data.forEach((element) => {
+  data.forEach((element, index) => {
     let post = document.createElement("div");
     post.classList.add("post");
     let img = document.createElement("img");
@@ -37,6 +37,7 @@ function displayPosts() {
 
     let postTitle = document.createElement("h3");
     postTitle.classList.add("postTitle");
+    postTitle.id = 'title_'+index;
     postTitle.innerHTML = element.postTitle;
     postData.appendChild(postTitle);
 
@@ -50,9 +51,42 @@ function displayPosts() {
     btn.value = "Read More";
     postData.appendChild(btn);
 
+    let modifyBtn = document.createElement("input");
+    modifyBtn.type = "button";
+    modifyBtn.value = "Modify";
+    modifyBtn.id = 'modifyBtn_'+index;
+    postData.appendChild(modifyBtn);
+
+    modifyBtn.addEventListener('click', modifyPost);
+    
+
     post.appendChild(postData);
     postsDiv.appendChild(post);
   });
+}
+
+function modifyPost(e){
+  let id = e.target.id.split('_')[1];
+  let titleEle = document.getElementById('title_'+id);
+
+  let titleEdit = document.createElement("input");
+  titleEdit.type = "text";
+  titleEdit.id = "title_"+id;
+  titleEdit.value = titleEle.innerText;
+
+  titleEle.replaceWith(titleEdit);
+
+  let btn = document.getElementById('modifyBtn_'+id);
+  btn.value = "Save";
+  btn.removeEventListener('click', modifyPost);
+
+  btn.addEventListener('click', savePost);
+}
+
+function savePost(e){
+  let id = e.target.id.split('_')[1]; 
+  data[id].postTitle = document.getElementById('title_'+id).value;
+   displayPosts(); 
 }
 
 displayPosts();
