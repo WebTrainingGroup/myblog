@@ -60,7 +60,7 @@ function displayPosts() {
         PostBtn.id = 'PostBtn_' + index ;
         postContent.appendChild(PostBtn);
 
-        // PostBtn.addEventListener("click", modifyPost);
+        PostBtn.addEventListener("click", modifyPost);
 
     
         postsDiv.appendChild(post);
@@ -85,14 +85,31 @@ function modifyDate(e){
     btn.addEventListener("click", saveDate);
 }
 
-
-
 function saveDate(e){
     let id = e.target.id.split("_")[1];
     data[id].meta = document.getElementById("date_" + id).value;
     displayPosts();
 }
 
+
+function modifyPost(e){
+    let postId = e.target.id.split("_")[1];
+    let postEle = document.getElementById("content_" + postId);
+
+    let postEdit = document.createElement("input");
+    postEdit.type = "text";
+    postEdit.id = "content_" + postId;
+    postEdit.value = postEle.innerText;
+
+    postEle.replaceWith(postEdit);
+
+    let btn = document.getElementById("PostBtn" + postId);
+    btn.value = "savePost";
+    btn.removeEventListener("click" , modifyPost);
+
+    btn.addEventListener("click", savePost);
+
+}
 
 
 displayPosts();
