@@ -63,6 +63,8 @@ body {background-color: #0b0b13f8;
 
 .post .date {color:red;}
 
+.PostButtons { position:relative; } 
+
 
 #posts img {
     max-width: 300px; 

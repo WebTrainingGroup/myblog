@@ -25,7 +25,7 @@ function displayPosts() {
     let postsDiv = document.getElementById("posts");
     postsDiv.innerHTML = "";
 
-    data.forEach(element =>{
+    data.forEach((element, index) =>{
         let post = document.createElement("div");
         post.classList.add("post");
         let pic = document.createElement("img");
@@ -34,15 +34,81 @@ function displayPosts() {
     
         let postContent = document.createElement("p");
         postContent.innerHTML = element.postContent;
+        postContent.id = 'content_' + index ;   
         post.appendChild(postContent);
     
         let postDate = document.createElement("div");
         postDate.classList.add("date");
+        postDate.id = "date_" + index ;
         postDate.innerHTML = element.meta;
         post.appendChild(postDate);
+
+        let DateBtn = document.createElement("input");
+        DateBtn.classList.add("PostButtons");
+        DateBtn.type = "button";
+        DateBtn.value = "modifyDate";
+        DateBtn.id = 'DateBtn_' + index ;
+        postContent.appendChild(DateBtn);
+
+        DateBtn.addEventListener("click", modifyDate);
+
+
+        let PostBtn = document.createElement("input");
+        PostBtn.classList.add("PostButtons");
+        PostBtn.type = "button";
+        PostBtn.value = "modifyPost";
+        PostBtn.id = 'PostBtn_' + index ;
+        postContent.appendChild(PostBtn);
+
+        PostBtn.addEventListener("click", modifyPost);
+
     
         postsDiv.appendChild(post);
     });
+}
+
+function modifyDate(e){
+    let dateId = e.target.id.split("_")[1];
+    let dateEle = document.getElementById("date_" + dateId);
+
+    let dateEdit = document.createElement("input");
+    dateEdit.type = "text";
+    dateEdit.id = "date_" + dateId;
+    dateEdit.value = dateEle.innerText;
+
+    dateEle.replaceWith(dateEdit);
+
+    let btn = document.getElementById("DateBtn_" + dateId);
+    btn.value = "save";
+    btn.removeEventListener("click" , modifyDate);
+
+    btn.addEventListener("click", saveDate);
+}
+
+function saveDate(e){
+    let id = e.target.id.split("_")[1];
+    data[id].meta = document.getElementById("date_" + id).value;
+    displayPosts();
+}
+
+
+function modifyPost(e){
+    let postId = e.target.id.split("_")[1];
+    let postEle = document.getElementById("content_" + postId);
+
+    let postEdit = document.createElement("input");
+    postEdit.type = "text";
+    postEdit.id = "content_" + postId;
+    postEdit.value = postEle.innerText;
+
+    postEle.replaceWith(postEdit);
+
+    let btn = document.getElementById("PostBtn" + postId);
+    btn.value = "savePost";
+    btn.removeEventListener("click" , modifyPost);
+
+    btn.addEventListener("click", savePost);
+
 }
 
 
