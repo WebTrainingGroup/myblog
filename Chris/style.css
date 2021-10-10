@@ -174,3 +174,8 @@ h4{
 .redText{
    color:red;
 } */
+
+.postContentEdit{
+  width: 200px;
+  height: 100px;
+}
