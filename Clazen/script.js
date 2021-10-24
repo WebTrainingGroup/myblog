@@ -21,6 +21,32 @@ var data = [
     }
 ]
 
+
+function fetchData(){
+    fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(response => response.json())
+        //.then(response => console.log(response));
+      //.then(json => console.log(json))
+        .then(json => {
+            json.forEach(element => {
+                let {body:postContent} = element;
+                let p = {
+                    imgSrc:"pic/pexels-photo-2346.jpeg", 
+                    postContent, 
+                    meta:"20211024" 
+                }
+                data.push(p);
+                });
+            displayPosts();
+        },
+            //console.log(data),
+            //displayPosts()   //-->為什麼不能放這裡? 不是已經把資料都push到data了嗎?
+        );
+    }
+
+fetchData();
+
+
 function displayPosts() {
     let postsDiv = document.getElementById("posts");
     postsDiv.innerHTML = "";
@@ -48,7 +74,7 @@ function displayPosts() {
         DateBtn.type = "button";
         DateBtn.value = "modifyDate";
         DateBtn.id = 'DateBtn_' + index ;
-        postContent.appendChild(DateBtn);
+        post.appendChild(DateBtn);
 
         DateBtn.addEventListener("click", modifyDate);
 
@@ -58,9 +84,18 @@ function displayPosts() {
         PostBtn.type = "button";
         PostBtn.value = "modifyPost";
         PostBtn.id = 'PostBtn_' + index ;
-        postContent.appendChild(PostBtn);
+        post.appendChild(PostBtn);
 
         PostBtn.addEventListener("click", modifyPost);
+
+
+        let DelPostBtn = document.createElement("input");
+        DelPostBtn.classList.add("PostButtons");
+        DelPostBtn.type = "button";
+        DelPostBtn.value = "Kill" ;
+        DelPostBtn.id = 'DelBtn_' + index ;
+        post.appendChild(DelPostBtn);
+        DelPostBtn.addEventListener("click", delPost);
 
     
         postsDiv.appendChild(post);
@@ -70,25 +105,30 @@ function displayPosts() {
 function modifyDate(e){
     let dateId = e.target.id.split("_")[1];
     let dateEle = document.getElementById("date_" + dateId);
+//藉由按鈕傳來的事件，找到ID，用來拼湊出目標ID
 
     let dateEdit = document.createElement("input");
     dateEdit.type = "text";
     dateEdit.id = "date_" + dateId;
-    dateEdit.value = dateEle.innerText;
+    dateEdit.value = dateEle.innerText; //創造 input 元素(輸入框)
 
-    dateEle.replaceWith(dateEdit);
+    dateEle.replaceWith(dateEdit); //將原本的Date內容，替換成可編輯的輸入框
 
     let btn = document.getElementById("DateBtn_" + dateId);
-    btn.value = "save";
+
+    btn.value = "save"; //變更原本Date按鈕的value，並移除原本的監聽器
+
     btn.removeEventListener("click" , modifyDate);
 
-    btn.addEventListener("click", saveDate);
+    btn.addEventListener("click", saveDate);//加上新的監聽器，導向saveDate()
 }
 
 function saveDate(e){
     let id = e.target.id.split("_")[1];
     data[id].meta = document.getElementById("date_" + id).value;
     displayPosts();
+    //利用傳來的事件得出索引值，再利用索引去修改data物件的meta這個key的內容
+    //把他替換成前面輸入框的內容(用date_ + id去找)
 }
 
 
@@ -96,28 +136,49 @@ function modifyPost(e){
     let postId = e.target.id.split("_")[1];
     let postEle = document.getElementById("content_" + postId);
 
-    let postEdit = document.createElement("input");
-    postEdit.type = "text";
+    let postEdit = document.createElement("textarea");
+    //postEdit.type = "text";
     postEdit.id = "content_" + postId;
-    postEdit.value = postEle.innerText;
+    postEdit.cols = 40;
+    postEdit.rows = 5;
+    postEdit.value = postEle.innerText;    
 
     postEle.replaceWith(postEdit);
 
-    let btn = document.getElementById("PostBtn" + postId);
+    let btn = document.getElementById("PostBtn_" + postId);
     btn.value = "savePost";
     btn.removeEventListener("click" , modifyPost);
-
     btn.addEventListener("click", savePost);
-
 }
 
+function savePost(e){
+    let id = e.target.id.split("_")[1];
+    data[id].postContent = document.getElementById("content_" + id).value;
+    displayPosts();
+}
 
-displayPosts();
+function delPost(e){
+    let id = e.target.id.split("_")[1];
+    data = data.filter(post => data.indexOf(post) != id);
+    displayPosts();
+}
+
+//失敗的寫法，不知道怎麼同時把id跟index丟給 killPost()
+// function delPost(e){  
+//     let id = e.target.id.split("_")[1];
+//     data = data.filter(killPost(id,index));
+// }
+
+// function killPost(post,index,id){
+//      return index < 2;
+// }
+
+
+
+//displayPosts();
 
 function addPost(e){
     e.preventDefault();
-
-
     let inputForm = document.getElementById("postAdd");
     let newPost = {
         "imgSrc":"pic/boat.jpg",
@@ -130,3 +191,5 @@ function addPost(e){
 
     displayPosts();
 }
+
+
