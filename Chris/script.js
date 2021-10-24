@@ -15,6 +15,31 @@ var data = [
   },
 ];
 
+
+function fetchData(){
+  fetch('https://jsonplaceholder.typicode.com/posts')
+  .then(response => response.json() )
+  .then(json => {
+    json.forEach(element => {
+      //console.log(element);
+      let {title:postTitle, body:postContent} = element;
+      //console.log(postTitle+"__"+postContent);
+      let p = {
+        imgSrc:'res/pic1.jpg',
+        meta:'20211010',
+        postTitle,
+        postContent
+      }
+      data.push(p);
+    });
+
+    displayPosts();
+  })
+}
+
+fetchData();
+
+
 function displayPosts() {
   let postsDiv = document.getElementById("posts");
   postsDiv.innerHTML = "";
@@ -67,6 +92,7 @@ function displayPosts() {
 }
 
 function modifyPost(e) {
+  console.log(e);
   let id = e.target.id.split("_")[1];
   let titleEle = document.getElementById("title_" + id);
 
@@ -121,7 +147,7 @@ function savePost(e) {
   displayPosts();
 }
 
-displayPosts();
+
 
 function addPost(e) {
   e.preventDefault();
