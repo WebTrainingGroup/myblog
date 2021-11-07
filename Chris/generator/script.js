@@ -1,19 +1,17 @@
-
-
-$(function () {
-  
-
-  
-});
-
 function gen(event) {
   event.preventDefault();
   $("#result").empty();
 
   let number = $("#number").val();
   //console.log((number));
-  if (number == undefined || number == '') {
+  if (number == undefined || number == "") {
     alert("請輸入數量");
+    return;
+  }
+
+  if(number==999){
+    $("#result").append(
+      '<div class="card" style="width: 18rem;"><img src="./3.jpeg" class="card-img-top" alt="..."><div class="card-body"><p class="card-text">最愛寶貝</p></div></div>'); 
     return;
   }
   if (number < 0) {
@@ -21,34 +19,48 @@ function gen(event) {
   } else if (number > users.names.length) {
     number = users.names.length;
   }
-// let ID = 'H123625021';
-  // let s = ID[1]==1?8:16;
-  // let sum = map['H']+s+ ID[2]*7+ ID[3]*6+ID[4]*5+ID[5]*4+ID[6]*3+ID[7]*2+ID[8]*1;
-  // let remind = sum%10;
-  // let valid = remind==0?0:10-remind;
 
-  // console.log(valid);
-  let resultString = '';
-  for(let i=0; i<number;i++){
-    let locationCode = String.fromCharCode(65+Math.floor(Math.random()*26));
-    let sex = Math.floor(Math.random()*2)+1; 
-    let s = sex==1?8:16;
-    let seq = String(Math.floor(Math.random()*10000000)).padStart(7,'0');
-    let sum = IDmap[locationCode] + s +seq[0]*7 + seq[1]*6+seq[2]*5+seq[3]*4+seq[4]*3+seq[5]*2+seq[6]*1;
-    //let sum2 = ;
-    //+ 
-   let remind = sum%10;
-  let valid = remind==0?0:10-remind;
+  let resultString = "";
+  for (let i = 0; i < number; i++) {
+    let locationCode = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+    let sex = Math.floor(Math.random() * 2) + 1;
+    let s = sex == 1 ? 8 : 16;
+    let seq = String(Math.floor(Math.random() * 10000000)).padStart(7, "0");
+    let sum =
+      IDmap[locationCode] +
+      s +
+      seq[0] * 7 +
+      seq[1] * 6 +
+      seq[2] * 5 +
+      seq[3] * 4 +
+      seq[4] * 3 +
+      seq[5] * 2 +
+      seq[6] * 1;
+    let remind = sum % 10;
+    let valid = remind == 0 ? 0 : 10 - remind;
 
-  // console.log(valid); 
+    // console.log(valid);
     //console.log(locationCode);
-      resultString+="<tr><th>"+(i+1)+"</th><td>"+users.names[Math.floor(Math.random() * users.names.length)]+"</td><td>"+locationCode+''+sex+''+seq+''+valid+"</td></tr>";
-
-      
+    resultString +=
+      "<tr><th>" +
+      (i + 1) +
+      "</th><td>" +
+      users.names[Math.floor(Math.random() * users.names.length)] +
+      "</td><td>" +
+      locationCode +
+      "" +
+      sex +
+      "" +
+      seq +
+      "" +
+      valid +
+      "</td></tr>";
   }
-  $("#result").append('<table class="table table-striped"><thead><tr><th scope="col">#</th><th scope="col">姓名</th><th scope="col">身分證字號</th></tr> </thead><tbody>'+resultString+'</tbody></table>');  
-
-  //console.log();
+  $("#result").append(
+    '<table class="table table-striped"><thead><tr><th scope="col">#</th><th scope="col">姓名</th><th scope="col">身分證字號</th></tr> </thead><tbody>' +
+      resultString +
+      "</tbody></table>"
+  );
 }
 
 let IDmap = {
