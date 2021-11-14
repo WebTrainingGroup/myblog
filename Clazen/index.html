@@ -34,13 +34,15 @@
 
 <!-- display: inline 和 float:left 的用法、時機 -->
 <form action="" onsubmit=addPost(event) id="postAdd">
-    <label for="title">artical title</label>
+    <label for="title" class="postAdd_label_1">artical title</label>
     <input type="text" name="PostTitle" id="title">
     <br>
-    <label for="content">artical content</label>
+    <label for="content" class="postAdd_label_2">artical content</label>
+    <div class="content_submit">
     <textarea name="PostContent" id="content" cols="50" rows="10"></textarea>
+    <input type="submit" value="Add Post" class="submit_btn">
+    </div>
     <br>
-    <input type="submit" value="Add Post">
 </form>
 
 <div id="posts">
