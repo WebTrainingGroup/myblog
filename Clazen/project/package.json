@@ -1,0 +1,14 @@
+{
+  "name": "project_2",
+  "version": "1.0.0",
+  "description": "2nd project in 2021",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Clazen",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}
