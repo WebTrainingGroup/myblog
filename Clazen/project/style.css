@@ -1,2 +1,33 @@
 
-.bg_test {background-color: cadetblue;}
+/* .bg_test {background-color:cadetblue;} */
+
+.half_bg_r {background-color:red; width:50%; float: right; position:relative;}
+.half_bg_l {background-color:lightslategray; width:50%; height:100%; float: left;}
+
+.carousel_2 {border:3px solid black;
+            position:absolute;
+            left: -200px;}
+
+.big_box {
+    width: 450px; height: 500px;
+    background-color: black;
+}
+
+.big_box p {color:red; float:right;}
+
+.discolored_box {
+    width:20vh ; height:20vh;
+    background:linear-gradient(135deg,  white 50%, gray 50%);
+}
+
+
+.small_box{
+    width:20vw; height: 20vh;
+    background-color:chocolate;
+    background:linear-gradient(to top, lime 5%,red 60%, white 100%);
+}
+
+.franch_flag {
+    width:20vw ; height:20vh;
+    background-image: linear-gradient(to right, blue 33%,white 33% 66%,red 66%);
+}
