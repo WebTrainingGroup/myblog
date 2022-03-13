@@ -7,59 +7,40 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="./style.css" rel="stylesheet">
-    <!-- <link href="font-awsome/all.css" rel="stylesheet"> -->
-    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+    
+    <link href="fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet">
+
 
 </head>
 <body>
 
     <div class="top_ground position-relative">
 
-          <span class="mx-3 d-none d-md-inline position-absolute top-10 end-0"> 
+          <span class="mx-3 d-none d-md-inline"> 
             <a href='#' class="p-3">LINK1</a>
             <a href='#' class="p-3">LINK2</a>
             <a href='#' class="p-3">LINK3</a>
           </span>
         
           <span class='position-absolute end-0 me-4 d-sm-inline d-md-none'>
-            <i id='bar_svg' class="fas fa-bars text-primary fs-1"></i>
+            <div id="bar_svg">
+              <i class="fas fa-bars text-primary fs-1"></i>
+            </div>
         </span>
-        <div id='bar_menu' class='position-absolute end-0 me-2 border border-2 w-25 d-none'>
+        <!-- <div id='bar_menu' class='position-absolute end-0 me-2 border border-2 w-25 '> -->
+          <div id="bar_menu" class="d-none" style="width:120px; border:red 2px solid;
+              position:absolute; top:40px; right:20px; transition:width 1s;">
             <a href='#'>LINK1</a><br/>
             <a href='#'>LINK2</a><br/>
             <a href='#'>LINK3</a><br/> 
         </div>
+      
 
-   
-       <!-- <nav class="navbar navbar-expand-md navbar-light bg-light">
-          <div class="container-fluid" style="border:red solid 2px;">
-            <a class="navbar-brand" href="#">Myweb</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="https://www.google.com">Google</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="https://webtraininggroup.github.io/myblog/Clazen/project_old">Clazen</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="https://hackmd.io">Hackmd</a>
-                </li>
-              </ul>
-              <span class="navbar-text">
-                Some Navbar text with an inline element
-              </span>
-            </div>
-          </div>
-        </nav>  -->
-
-        <br><br><br><br><br><br><br>
 
         <div class="container-fluid container-fluid_2">
+              <!-- container-fluid:無論何種視窗大小，都顯示100% 內容寬度 -->
         <img class="extra_pic" src="pic/nature-1563109_2.jpg" width=50%>
+              <!-- carousel:圖片輪播 -->
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="max-width: 600px;">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -85,8 +66,9 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
-        </div>
-        <div class="text" style="border:red solid 2px;">
+        </div> <!-- 圖片輪播↑ -->
+
+        <div class="text">
           <div style="font-size: 40px; position:absolute; top:70px;
             left:-50%; background-color:whitesmoke;">
           DISCOVER LUXURY
@@ -103,10 +85,9 @@
          </div>
 
         </div>
-      
-
 		
     </div>
+
 
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -119,17 +100,58 @@
       </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+
     <svg><circle cx="50" cy="50" r="40" fill="yellow" stroke="black" stroke-width="5"/></svg>
     <i class="fas fa-bars fa-4x"></i>
-    <i class="fab fa-line fa-4x" style="color:green"></i>
+    <i class="fab fa-line fa-4x"></i>
     <i class="fas fa-spinner fa-spin fa-3x"></i>
 
-<span class='position-absolute end-0 me-4'>
-  <i class="fas fa-bars text-primary fs-1"></i>
 
+
+  <i class="fas fa-square fa-2x"></i>
+  
+  <span class="fa-stack fa-2x">
+    <i class="fas fa-square fa-stack-2x"></i>
+    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+  </span>
+
+  
+  
+
+  <!-- ------------------------------ -->
+
+  <div class="fa-4x">
+    <span class="fa-layers fa-fw" style="background:MistyRose">
+      <i class="fas fa-circle" style="color:Tomato"></i>
+      <i class="fa-inverse fas fa-times" data-fa-transform="shrink-6"></i>
+    </span>
+  
+    <span class="fa-layers fa-fw" style="background:MistyRose">
+      <i class="fas fa-bookmark"></i>
+      <i class="fa-inverse fas fa-heart" data-fa-transform="shrink-10 up-2" style="color:Tomato"></i>
+    </span>
+  
+    <span class="fa-layers fa-fw" style="background:MistyRose">
+      <i class="fas fa-certificate"></i>
+      <span class="fa-layers-text fa-inverse" data-fa-transform="shrink-11.5 rotate--30" style="font-weight:900">NEW</span>
+    </span>
+  
+    <span class="fa-layers fa-fw" style="background:MistyRose">
+      <i class="fas fa-envelope"></i>
+      <span class="fa-layers-counter" style="background:Tomato">1,419</span>
+    </span>
+  </div>
+ 
+  
 </span>
+
+<i class="fas fa-camera-retro"></i>
+<i class="fas fa-4x fa-compass"></i>
+<i class="fas fa-spinner"></i>
+
+<script src="https://pro.fontawesome.com/releases/v5.10.0/js/all.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
