@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    min-height: 100vh;
+}
+
+.header{
+    background: linear-gradient(90deg, white 0 50%, #e7ece9 50% 100%);
+    height: 350px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.menu{
+    /* display: none; */
+    height: 0;
+    overflow: hidden;
+    transition: height 1s;
+}
+
+#menu{
+    display: none;
+}
+
+#menu:checked ~ .menu{
+    /* display: block; */
+    height: 150px;
+    width: 150px;
+    margin: 0 0 0 auto;
+    background-color: white;
+    
+}
+
+.hamburger{
+    width: 25px;
+    height: 25px;
+}
+
+.menu a{
+    color: rgba(97, 97, 97, 0.5);
+    margin: 0 15px;
+}
+
+.menu .actived{
+    color: black;
+
+}
+
+.banner{
+    width: 100%;
+    position: relative;
+}
+
+.photo{
+    text-align: center;
+    position: relative;
+    margin: 0 0 50px 0;
+}
+
+.carousel{
+    width: 80%;
+    position: relative;
+    z-index: 2;
+}
+
+.back-pic{
+    width: 40%;
+    position: absolute;
+    right: 0;
+    bottom: -30px;
+    z-index: 1;
+}
+
+.navbar{
+    padding: 40px;
+}
+
+.logo{
+    vertical-align: middle;
+}
+
+.name{
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.desc{
+    padding: 20px;
+}
+
+.desc h1{
+    margin: 20px 0;
+    font-weight: 400;
+    background-color: white;
+    width: 60%;
+}
+
+.desc p {
+    color: rgb(158, 158, 158);
+    margin: 20px 0;
+    background-color: white;
+    width: 80%;
+}
+
+.desc a{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 0.8rem;
+    margin: 40px 0;
+}
+
+@media screen and (min-width: 760px) {
+    .menu{
+        display: inline-block;
+        overflow:visible;
+    } 
+
+    .hamburger{
+        display: none;
+    }
+
+    .photo{
+        width:70%;
+        margin: 0 0 0 auto;
+    }
+
+    
+
+    .desc{
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        z-index: 3;
+    }
+}
