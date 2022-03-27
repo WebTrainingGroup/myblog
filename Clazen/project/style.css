@@ -8,22 +8,27 @@
             position:absolute;
             right: 350px;} */
 
-.container-fluid_2 {width:550px;
-            position:relative;
-            left:100px;
-            top:150px;}
+
 
 .top_ground {background: linear-gradient(to right, white 45%, lightblue 45% );
             position:relative;
             height:600px;}
 
+.container_2 {width:60%;
+                position:absolute;
+                right:0%;
+                bottom:20%;
+                z-index:2;}
+
+
 .text_span {width:260px;
-            position:absolute; bottom:50px;left:-50%; }
+            position:absolute; bottom:25%;left:25%; }
 
 .extra_pic {position:absolute;
-            bottom:-40px;
-            right:-130px;
-            /* z-index: -1; */ }
+            bottom:10%;
+            width:25%;
+            right:0%;
+            z-index:1; }
 
 .about_us_btn {position:absolute;
                bottom:10px;
