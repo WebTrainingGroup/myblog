@@ -10,9 +10,10 @@ Bootstrap includes many [CSS custom properties (variables)](https://developer.mo
 
 **All our custom properties are prefixed with `bs-`** to avoid conflicts with third party CSS.
 
+
 ## Root variables
 
-Here are the variables we include (note that the `:root` is required) that can be accessed anywhere Bootstrap's CSS is loaded. They're located in our `_root.scss` file and included in our compiled dist files.
+Here are the variables we include (note that the ` :root` is required) that can be accessed anywhere Bootstrap's CSS is loaded. They're located in our `_root.scss` file and included in our compiled dist files.
 
 ```css
 {{< root.inline >}}
