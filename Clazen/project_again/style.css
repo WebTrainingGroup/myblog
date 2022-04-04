@@ -23,6 +23,8 @@ a {text-decoration: none;}
 
 .bar_svg {width:30px; height: 30px;}
 
+.break {width:100%;}
+
 .menu {
     background:white;
     width:200px;
@@ -46,7 +48,7 @@ a {text-decoration: none;}
         position:relative;}
 
 .pics {text-align: center;
-    position:relative;
+      position:relative;
 }
 
 .desc {padding:20px;
@@ -59,10 +61,13 @@ a {text-decoration: none;}
 .desc .line2{background-color: rgb(245, 245, 245);
                 width:300px;}
 
-.desc p {color:rgb(153, 153, 153);}
+.desc p {color:rgb(153, 153, 153);
+        margin-bottom:20px;}
 
-.desc a {position:relative;
-        top:20px;
+.desc a {
+        /* position:relative;
+        top:10px; 
+        margin-top:350px; */
         background-color: black;
         color:white;
         padding:10px;}
